@@ -44,6 +44,7 @@ use crate::attributes::stability::{
     BodyStabilityParser, ConstStabilityIndirectParser, ConstStabilityParser, StabilityParser,
 };
 use crate::attributes::test_attrs::IgnoreParser;
+use crate::attributes::thread_local::ThreadLocalParser;
 use crate::attributes::traits::{
     AllowIncoherentImplParser, CoherenceIsCoreParser, CoinductiveParser, ConstTraitParser,
     DenyExplicitImplParser, DoNotImplementViaObjectParser, FundamentalParser, MarkerParser,
@@ -152,6 +153,7 @@ attribute_parsers!(
         Single<RustcLayoutScalarValidRangeStart>,
         Single<RustcObjectLifetimeDefaultParser>,
         Single<SkipDuringMethodDispatchParser>,
+        Single<ThreadLocalParser>,
         Single<TransparencyParser>,
         Single<WithoutArgs<AllowIncoherentImplParser>>,
         Single<WithoutArgs<AsPtrParser>>,

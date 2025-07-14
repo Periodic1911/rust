@@ -65,6 +65,7 @@ impl AttributeKind {
             Stability { .. } => Yes,
             StdInternalSymbol(..) => No,
             TargetFeature(..) => No,
+            ThreadLocal(..) => No,
             TrackCaller(..) => Yes,
             TypeConst(..) => Yes,
             UnsafeSpecializationMarker(..) => No,

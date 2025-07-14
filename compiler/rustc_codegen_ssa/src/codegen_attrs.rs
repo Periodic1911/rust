@@ -210,6 +210,9 @@ fn codegen_fn_attrs(tcx: TyCtxt<'_>, did: LocalDefId) -> CodegenFnAttrs {
                 AttributeKind::StdInternalSymbol(_) => {
                     codegen_fn_attrs.flags |= CodegenFnAttrFlags::RUSTC_STD_INTERNAL_SYMBOL
                 }
+                AttributeKind::ThreadLocal(_) => {
+                    codegen_fn_attrs.flags |= CodegenFnAttrFlags::THREAD_LOCAL
+                }
                 _ => {}
             }
         }
@@ -226,7 +229,6 @@ fn codegen_fn_attrs(tcx: TyCtxt<'_>, did: LocalDefId) -> CodegenFnAttrs {
             sym::rustc_allocator_zeroed => {
                 codegen_fn_attrs.flags |= CodegenFnAttrFlags::ALLOCATOR_ZEROED
             }
-            sym::thread_local => codegen_fn_attrs.flags |= CodegenFnAttrFlags::THREAD_LOCAL,
             sym::linkage => {
                 if let Some(val) = attr.value_str() {
                     let linkage = Some(linkage_by_name(tcx, did, val.as_str()));

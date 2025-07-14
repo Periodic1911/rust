@@ -377,6 +377,9 @@ pub enum AttributeKind {
     /// Represents `#[target_feature(enable = "...")]`
     TargetFeature(ThinVec<(Symbol, Span)>, Span),
 
+    /// Represents [`#[tread_local]`](https://doc.rust-lang.org/beta/unstable-book/language-features/thread-local.html)
+    ThreadLocal(Span),
+
     /// Represents `#[track_caller]`
     TrackCaller(Span),
 

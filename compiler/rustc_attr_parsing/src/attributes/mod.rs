@@ -45,6 +45,7 @@ pub(crate) mod rustc_internal;
 pub(crate) mod semantics;
 pub(crate) mod stability;
 pub(crate) mod test_attrs;
+pub(crate) mod thread_local;
 pub(crate) mod traits;
 pub(crate) mod transparency;
 pub(crate) mod util;
